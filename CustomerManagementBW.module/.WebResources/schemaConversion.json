@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/CustomerManagementBW.module/Service Descriptors/customermanagementbw.module.customer-customer.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Customers"
+    },
+    {
+        "jsonSchemaLocation": "/CustomerManagementBW.module/Service Descriptors/customermanagementbw.module.customers-customers.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Customers"
+    }
+]}

@@ -1,0 +1,92 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "customer",
+    "description" : "customer service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/customer" : {
+      "post" : {
+        "summary" : "postCustomer",
+        "description" : "postCustomer",
+        "operationId" : "post-customer",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Customer"
+          },
+          "required" : true
+        }, {
+          "name" : "Tier",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Customer to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getCustomer",
+        "description" : "getCustomer",
+        "operationId" : "get-customer",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Tier",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Customer to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Customer" : {
+      "type" : "object",
+      "required" : [ "Tier", "PhoneNumber", "Surname", "CreateDate", "Name" ],
+      "properties" : {
+        "Name" : {
+          "type" : "string"
+        },
+        "Surname" : {
+          "type" : "string"
+        },
+        "PhoneNumber" : {
+          "type" : "string"
+        },
+        "Tier" : {
+          "type" : "string",
+          "enum" : [ "Standard", "Premium", "Elite" ]
+        },
+        "CreateDate" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    }
+  }
+}
