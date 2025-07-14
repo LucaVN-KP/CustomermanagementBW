@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/Customer" elementFormDefault="qualified" targetNamespace="http://www.example.org/Customer">
+      
+  <element name="Name" type="string"/>
+      
+  <element name="Surname" type="string"/>
+      
+  <element name="PhoneNumber" type="string"/>
+      
+  <element name="Tier">
+        	
+    <simpleType>
+          		
+      <restriction base="string">
+            			
+        <enumeration value="Standard"/>
+            			
+        <enumeration value="Premium"/>
+            			
+        <enumeration value="Elite"/>
+            		
+      </restriction>
+          	
+    </simpleType>
+        
+  </element>
+      
+  <element name="CreateDate" type="date"/>
+      
+  <element name="Customer" type="tns:CustomerType"/>
+      
+    
+  <complexType name="CustomerType">
+        	
+    <sequence>
+          		
+      <element ref="tns:Name"/>
+          		
+      <element ref="tns:Surname"/>
+          		
+      <element ref="tns:PhoneNumber"/>
+          		
+      <element ref="tns:Tier"/>
+          		
+      <element ref="tns:CreateDate"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+  <complexType name="CustomerArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="Customer" type="tns:CustomerType"/>
+    </sequence>
+  </complexType>
+      
+  <element name="CustomerArray" type="tns:CustomerArray"/>
+  
+</schema>
