@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<responses xmlns:tns='pippo' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation="XSDResponses.xsd">
+	<response>
+		<method>GET</method>
+		<sentence attribute="OK">GET request successful</sentence>
+		<sentence attribute="KO">GET request failed</sentence>
+	</response>
+	<response>
+		<method>POST</method>
+		<sentence attribute="OK">POST request successful</sentence>
+		<sentence attribute="KO">POST request failed</sentence>
+	</response>
+</responses>

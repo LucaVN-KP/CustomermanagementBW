@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="responses">
+		<complexType>
+			<sequence>
+				<element name="response" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="method" type="string" maxOccurs="unbounded"/>
+							<element name="sentence" maxOccurs="unbounded">
+								<complexType>
+									<simpleContent>
+										<extension base="string">
+											<attribute name="attribute" type="string" use="required"/>
+										</extension>
+									</simpleContent>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
